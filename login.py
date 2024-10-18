@@ -66,29 +66,29 @@ class Login(QWidget):
         if not self.kara_edit.text().isdigit():
             error = True
             self.kara_edit.clear()
-            self.msg.setText('Notgri telefon raqam!')
+            self.msg.setText('Telefon raqamda faqat sonlar bolishi kerak!')
             self.msg.exec_()
         elif not self.nomer_edit.text().isdigit():
             error = True
             self.nomer_edit.clear()
-            self.msg.setText('Karta notogri!')
+            self.msg.setText('Kartada faqat sonlar bolish kerak!')
             self.msg.exec_()
         if nomer_tekshiruv != 9:
             if karta_tekshiruv != 16:
                 self.nomer_edit.clear()
                 self.kara_edit.clear()
                 error = True
-                self.msg.setText('Karta va telefon notogri!')
+                self.msg.setText('Karta va telefon notogri, kartada 16ta va telefon raqamda 9 tason boladi!')
                 self.msg.exec_()
             else:
                 error = True
                 self.nomer_edit.clear()
-                self.msg.setText('Notgri telefon raqam!')
+                self.msg.setText('Telefon raqamda 9ta son boladi!')
                 self.msg.exec_()
         elif  karta_tekshiruv != 16:
                 error = True
                 self.kara_edit.clear()
-                self.msg.setText('Karta notogri!')
+                self.msg.setText('Kartada 16ta son boladi!')
                 self.msg.exec_()
         elif len(self.parol_edit.text()) < 4:
             self.parol_edit.clear()

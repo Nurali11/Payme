@@ -97,7 +97,7 @@ class Kirish(QWidget):
                     if len(i) > 0:
                         i = i.split(',')
                         if i[3] == self.lbl2.text():
-                            self.msg.setText('Succesful')
+                            self.msg.setText('Topildi!')
                             self.msg.exec_()
                             self.topildi = True
         if self.topildi == False:
