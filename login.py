@@ -107,5 +107,5 @@ class Login(QWidget):
             self.msg.setIcon(QMessageBox.Information)
             self.msg.exec_()
             with open ('tekshiruv.txt', 'a') as f:
-                f.write(f"{self.ism_edit.text()},{self.kara_edit.text()},{self.nomer_edit.text()},{self.parol_edit.text()}\n")
+                f.write(f"{self.ism_edit.text()},{self.kara_edit.text()},{self.nomer_edit.text()},{self.parol_edit.text()},0\n")
                 self.close()
