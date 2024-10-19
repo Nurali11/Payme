@@ -1,4 +1,6 @@
 from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QPushButton, QVBoxLayout, QHBoxLayout, QMessageBox
+from menyu import Menyu
+from service import *
 
 class Kirish(QWidget):
     def __init__(self):
@@ -92,17 +94,15 @@ class Kirish(QWidget):
     def Submit(self):
         self.topildi = False
         self.msg = QMessageBox()
-        with open('tekshiruv.txt') as f:
-                for i in f.read().split('\n'):
-                    if len(i) > 0:
-                        i = i.split(',')
-                        if i[3] == self.lbl2.text():
-                            self.msg.setText('Topildi!')
-                            self.msg.exec_()
-                            self.topildi = True
-        if self.topildi == False:
+        asnwer = User.check_password(self.lbl2.text())
+        
+        if asnwer != None:
+            self.menyu = Menyu(asnwer)
+            self.menyu.show()
+                            
+        else:
             self.lbl2.setText("")
             self.raqamlar_soni =0
-            self.msg.setIcon(QMessageBox.critical)
+            self.msg.setIcon(QMessageBox.Critical)
             self.msg.setText('Topilmadi!')
             self.msg.exec_()

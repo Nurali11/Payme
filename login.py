@@ -73,6 +73,11 @@ class Login(QWidget):
             self.nomer_edit.clear()
             self.msg.setText('Kartada faqat sonlar bolish kerak!')
             self.msg.exec_()
+        if not self.parol_edit.text().isdigit():
+            error = True
+            self.parol_edit.clear()
+            self.msg.setText('Parolda faqat sonlar bolish kerak!')
+            self.msg.exec_()
         if nomer_tekshiruv != 9:
             if karta_tekshiruv != 16:
                 self.nomer_edit.clear()
