@@ -1,4 +1,5 @@
 from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QPushButton, QVBoxLayout, QHBoxLayout, QMessageBox
+from menyu import Menyu
 
 class Kirish(QWidget):
     def __init__(self):
